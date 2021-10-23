@@ -1,0 +1,48 @@
+/* Java Program For Student Mark Calculation*/
+package com.company.app;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Application {
+    private JTextField textSTname;
+    private JTextField textMarks2;
+    private JTextField textMarks3;
+    private JTextField textTotal;
+    private JTextField textAvg;
+    private JButton calButton;
+    private JTextField txtMarks1;
+    private JTextField textGrade;
+    private JPanel Main;
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Application");
+        frame.setContentPane(new Application().Main);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+    public Application() {
+        calButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int m1,m2,m3,tot;
+                double avg;
+                 m1=Integer.parseInt(txtMarks1.getText());
+                 m2=Integer.parseInt(textMarks2.getText());
+                 m3=Integer.parseInt(textMarks3.getText());
+                tot=m1+m2+m3;
+                textTotal.setText(String.valueOf(tot));
+                avg=tot/3.0f;
+                textAvg.setText(String.valueOf(avg));
+                if(avg>=50){
+                    textGrade.setText("Hooray You are Pass!");
+                }
+                else {
+                    textGrade.setText("Fail");
+                }
+            }
+        });
+    }
+}
